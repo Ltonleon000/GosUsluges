@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Услуги — Госуслуги</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #edf2fa;
+            color: #243858;
+            font-family: Arial, sans-serif;
+        }
+
+        header {
+            padding: 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 10px;
+            font-size: 36px;
+            text-shadow: 2px 2px 3px #dce4ef;
+        }
+
+        .blue { color: #0d4cd3; }
+        .red { color: #e94360; }
+
+        .note {
+            font-size: 14px;
+            color: #5a6b85;
+        }
+
+        nav {
+            padding: 14px;
+            background-color: #0d4cd3;
+            text-align: center;
+        }
+
+        nav a {
+            margin: 0 16px;
+            color: white;
+            font-size: 16px;
+        }
+
+        .ad-strip {
+            margin: 12px 15px;
+            padding: 14px;
+            background-color: #713bd0;
+            border-radius: 10px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px #c8b5f0;
+        }
+
+        .ad-strip a { color: #ffdc63; }
+
+        .banner {
+            margin: 12px 15px;
+            text-align: center;
+        }
+
+        .banner img {
+            width: 100%;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px #c8b5f0;
+        }
+
+        .layout {
+            margin: 15px;
+            overflow: hidden;
+        }
+
+        .content {
+            float: left;
+            width: 70%;
+            margin-right: 2%;
+        }
+
+        aside {
+            float: right;
+            width: 26%;
+        }
+
+        section {
+            margin-bottom: 18px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px #d5deec;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #0d4cd3;
+            font-size: 24px;
+        }
+
+        article {
+            margin: 18px 0;
+            padding: 18px;
+            background-color: #f7f9ff;
+            border-radius: 10px;
+            box-shadow: 0 3px 0 #dce4ef;
+            overflow: hidden;
+        }
+
+        article:target {
+            background-color: #fff2b8;
+            box-shadow: 0 0 0 3px #0d4cd3;
+        }
+
+        article img.hero {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+        }
+
+        article h3 {
+            margin-top: 0;
+            color: #0d4cd3;
+            font-size: 22px;
+        }
+
+        .button {
+            padding: 10px 16px;
+            background-color: #0d4cd3;
+            border-radius: 8px;
+            color: white;
+            font-size: 15px;
+        }
+
+        .back-link {
+            color: #0d4cd3;
+            font-size: 15px;
+        }
+
+        .mini-ads {
+            text-align: center;
+        }
+
+        .mini-ads a {
+            display: inline-block;
+            width: 30%;
+            margin: 1%;
+            padding: 8px;
+            background-color: #e8ddff;
+            border-radius: 10px;
+            color: #51269e;
+            box-shadow: 0 3px 6px #d8c8f5;
+        }
+
+        .mini-ads img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .faq {
+            margin: 10px 0;
+            padding: 12px;
+            background-color: #f0f5ff;
+            border-radius: 10px;
+        }
+
+        .side-box {
+            margin-bottom: 15px;
+            padding: 16px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 3px 8px #d5deec;
+        }
+
+        .side-box a { color: #0d4cd3; }
+
+        .advert {
+            margin-bottom: 15px;
+            padding: 14px;
+            background-color: #713bd0;
+            border-radius: 12px;
+            color: white;
+            text-align: center;
+            box-shadow: 0 4px 10px #c8b5f0;
+        }
+
+        .advert a { color: #ffdc63; }
+
+        .advert img {
+            width: 100%;
+            max-width: 220px;
+            border-radius: 8px;
+        }
+
+        footer {
+            clear: both;
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #dce5f4;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #00000099;
+            text-align: center;
+        }
+
+        .popup:target {
+            display: block;
+            padding-top: 50px;
+        }
+
+        .popup-box {
+            width: 520px;
+            margin: 0 auto;
+            padding: 28px;
+            background-color: #713bd0;
+            border-radius: 16px;
+            color: white;
+            box-shadow: 0 8px 20px #00000055;
+        }
+
+        .popup-box img {
+            width: 100%;
+            max-width: 320px;
+            border-radius: 10px;
+        }
+
+        .popup-box .button {
+            margin: 8px;
+            background-color: white;
+            color: #5930a6;
+        }
+
+        .close {
+            color: white;
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>
+            <span class="blue">Гос</span><span class="red">услуги</span>
+            — каталог
+        </h1>
+        <p>Вторая страница: описания услуг + ещё больше рекламы MAX.</p>
+        <p>
+            <a class="button" href="#ad-home">← На главную</a>
+            <a class="button" href="#doctor">К врачу</a>
+            <a class="button" href="#job">К работе</a>
+            <a class="button" href="#documents">К документам</a>
+        </p>
+        <p class="note">Услуга из ссылки подсвечивается жёлтым.</p>
+    </header>
+
+    <nav>
+        <a href="#ad-home">Главная</a>
+        <a href="#doctor">Врач</a>
+        <a href="#job">Работа</a>
+        <a href="#documents">Документы</a>
+        <a href="#extra-ads">Ещё MAX</a>
+        <a href="#faq">Вопросы</a>
+    </nav>
+
+    <p class="ad-strip">
+        Другая страница.
+        <a href="https://max.ru/" target="_blank">Тот же MAX</a>.
+    </p>
+
+    <div class="banner">
+        <a href="#ad-max">
+            <img src="images/max-banner.jpg" alt="Баннер MAX на странице услуг">
+        </a>
+    </div>
+
+    <div class="layout">
+        <div class="content">
+            <main>
+
+                <section id="catalog">
+                    <h2>Описание услуг</h2>
+                    <p>
+                        Ниже три услуги с картинками, списками шагов
+                        и кнопками. Между ними — рекламные вставки MAX.
+                    </p>
+
+                    <article id="doctor">
+                        <img class="hero" src="images/doctor.jpg" alt="Запись к врачу">
+                        <h3>Запись к врачу через бота MAX</h3>
+                        <p>
+                            Вымышленный бот MAXим помогает выбрать врача
+                            и время приёма. Настоящая запись здесь не делается.
+                        </p>
+                        <ol>
+                            <li>Выбрать специалиста</li>
+                            <li>Посмотреть дату и время</li>
+                            <li>Подтвердить выбор</li>
+                            <li>Посмотреть рекламу MAX</li>
+                        </ol>
+                        <p>
+                            <a class="button" href="#ad-max">Реклама MAX</a>
+                            <a class="button" href="https://max.ru/" target="_blank">Сайт MAX</a>
+                        </p>
+                        <p>
+                            <a class="back-link" href="index.html#popular">← Назад к выбору услуг</a>
+                        </p>
+                    </article>
+
+                    <p class="ad-strip">
+                        Доктор MAXим рекомендует отдых.
+                        Рекламный отдел рекомендует
+                        <a href="https://max.ru/" target="_blank">MAX</a>.
+                    </p>
+
+                    <div class="mini-ads">
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/max.jpg" alt="MAX">
+                            <p>После врача</p>
+                        </a>
+                        <a href="#ad-max">
+                            <img src="images/max-banner.jpg" alt="Баннер">
+                            <p>Ещё баннер</p>
+                        </a>
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/doctor.jpg" alt="Врач и MAX">
+                            <p>MAX в очереди</p>
+                        </a>
+                    </div>
+
+                    <article id="job">
+                        <img class="hero" src="images/job.jpg" alt="Оформление на работу">
+                        <h3>Оформление на работу</h3>
+                        <p>
+                            Подготовьте резюме: образование, навыки, опыт.
+                            В учебной компании открыта вакансия
+                            «Главный специалист по размещению MAX».
+                        </p>
+                        <ul>
+                            <li>Находить свободное место на странице</li>
+                            <li>Добавлять туда рекламу</li>
+                            <li>Проверять, осталось ли ещё место</li>
+                        </ul>
+                        <p>
+                            <img src="images/max.jpg" alt="Логотип MAX" width="120">
+                        </p>
+                        <p>
+                            <a class="button" href="#ad-max">Познакомиться с MAX</a>
+                            <a class="button" href="index.html#news">Новости о вакансии</a>
+                        </p>
+                        <p>
+                            <a class="back-link" href="index.html#popular">← Назад к выбору услуг</a>
+                        </p>
+                    </article>
+
+                    <p class="ad-strip">
+                        Ваше резюме увидят.
+                        <a href="https://max.ru/" target="_blank">Этот баннер</a>
+                        — уже увидели.
+                    </p>
+
+                    <article id="documents">
+                        <img class="hero" src="images/documents.jpg" alt="Документы">
+                        <h3>Документы</h3>
+                        <p>
+                            Перед оформлением документа уточните:
+                            куда обращаться, что подготовить
+                            и сколько ждать.
+                        </p>
+                        <ul>
+                            <li>Паспорт</li>
+                            <li>СНИЛС</li>
+                            <li>Заявление (у нас вместо него реклама)</li>
+                        </ul>
+                        <p>
+                            Здесь могла быть форма.
+                            Мы оставили место для MAX.
+                        </p>
+                        <p>
+                            <a class="button" href="#ad-max">Открыть рекламу MAX</a>
+                            <a class="button" href="https://max.ru/" target="_blank">Скачать… шутка</a>
+                        </p>
+                        <p>
+                            <a class="back-link" href="index.html#popular">← Назад к выбору услуг</a>
+                        </p>
+                    </article>
+                </section>
+
+                <section id="extra-ads">
+                    <h2>Ещё больше MAX</h2>
+                    <p>Дополнительная галерея на второй странице.</p>
+
+                    <div class="mini-ads">
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/max.jpg" alt="MAX 1">
+                            <p>Классика</p>
+                        </a>
+                        <a href="#ad-max">
+                            <img src="images/max-banner.jpg" alt="MAX 2">
+                            <p>Широкий баннер</p>
+                        </a>
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/job.jpg" alt="MAX 3">
+                            <p>MAX на работе</p>
+                        </a>
+                    </div>
+
+                    <div class="mini-ads">
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/documents.jpg" alt="MAX 4">
+                            <p>MAX в документах</p>
+                        </a>
+                        <a href="#ad-home">
+                            <img src="images/max-banner.jpg" alt="MAX 5">
+                            <p>На главную через MAX</p>
+                        </a>
+                        <a href="https://max.ru/" target="_blank">
+                            <img src="images/doctor.jpg" alt="MAX 6">
+                            <p>MAX у врача</p>
+                        </a>
+                    </div>
+                </section>
+
+                <p class="ad-strip">
+                    Вы почти у конца страницы.
+                    <a href="https://max.ru/" target="_blank">MAX</a>
+                    уже ждёт в футере.
+                </p>
+
+                <section id="faq">
+                    <h2>Частые вопросы</h2>
+
+                    <div class="faq">
+                        <strong>Это настоящие Госуслуги?</strong>
+                        <p>Нет. Это учебный проект по HTML и CSS.</p>
+                    </div>
+
+                    <div class="faq">
+                        <strong>Почему везде MAX?</strong>
+                        <p>Потому что это изюминка сайта. Нарочно.</p>
+                    </div>
+
+                    <div class="faq">
+                        <strong>Как вернуться на главную?</strong>
+                        <p>
+                            Через кнопку выше или через
+                            <a href="#ad-home">рекламное окно</a>.
+                        </p>
+                    </div>
+
+                    <div class="faq">
+                        <strong>Можно без рекламы?</strong>
+                        <p>
+                            Технически да:
+                            <a href="index.html">прямая ссылка на главную</a>.
+                            Но зачем лишать себя MAX?
+                        </p>
+                    </div>
+
+                    <p>
+                        <a class="button" href="#ad-home">← На главную через MAX</a>
+                        <a class="button" href="index.html">На главную напрямую</a>
+                    </p>
+                </section>
+
+            </main>
+        </div>
+
+        <aside>
+            <div class="side-box">
+                <h2>На этой странице</h2>
+                <ul>
+                    <li><a href="#doctor">Врач</a></li>
+                    <li><a href="#job">Работа</a></li>
+                    <li><a href="#documents">Документы</a></li>
+                    <li><a href="#extra-ads">Галерея MAX</a></li>
+                    <li><a href="#faq">Вопросы</a></li>
+                </ul>
+            </div>
+
+            <div class="advert">
+                <p class="note">Реклама</p>
+                <a href="https://max.ru/" target="_blank">
+                    <img src="images/max.jpg" alt="MAX">
+                </a>
+                <h3>Вы всё ещё здесь?</h3>
+                <p>MAX тоже.</p>
+            </div>
+
+            <div class="advert">
+                <a href="#ad-max">
+                    <img src="images/max-banner.jpg" alt="Баннер">
+                </a>
+                <h3>Мало рекламы?</h3>
+                <p>Нажмите баннер.</p>
+            </div>
+
+            <div class="advert">
+                <img src="images/documents.jpg" alt="Документы и MAX">
+                <h3>Документы ждут</h3>
+                <p>
+                    <a href="#documents">К разделу →</a>
+                </p>
+            </div>
+
+            <div class="side-box">
+                <h2>Навигация</h2>
+                <p><a href="index.html">← Главная страница</a></p>
+                <p><a href="index.html#ads">Галерея на главной</a></p>
+                <p><a href="index.html#news">Новости</a></p>
+            </div>
+        </aside>
+    </div>
+
+    <footer>
+        <p>© 2026. Учебный проект.</p>
+        <p>
+            <a href="index.html">Главная</a> ·
+            <a href="services.html">Услуги</a> ·
+            <a href="#extra-ads">MAX</a> ·
+            <a href="https://max.ru/" target="_blank">max.ru</a>
+        </p>
+        <p>Все рекламные истории — пародия.</p>
+    </footer>
+
+    <div class="popup" id="ad-home">
+        <div class="popup-box">
+            <p><a class="close" href="#catalog">× закрыть</a></p>
+            <h2>На главную? Через MAX!</h2>
+            <p>
+                <img src="images/max-banner.jpg" alt="MAX">
+            </p>
+            <p>
+                <a class="button" href="https://max.ru/" target="_blank">Открыть MAX</a>
+                <a class="button" href="index.html">На главную →</a>
+            </p>
+        </div>
+    </div>
+
+    <div class="popup" id="ad-max">
+        <div class="popup-box">
+            <p><a class="close" href="#catalog">× закрыть</a></p>
+            <h2>MAX. Вы нажали — мы показали.</h2>
+            <p>
+                <img src="images/max.jpg" alt="MAX">
+            </p>
+            <p>
+                <a class="button" href="https://max.ru/" target="_blank">Открыть MAX</a>
+                <a class="button" href="#extra-ads">К галерее</a>
+            </p>
+        </div>
+    </div>
+
+</body>
+</html>
